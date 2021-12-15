@@ -1,5 +1,3 @@
-#ignore /museum from previous Stage0
-/museum
 # Logs
 logs
 *.log
