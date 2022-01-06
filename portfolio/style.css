@@ -1,11 +1,15 @@
 /* html {
   scroll-behavior: smooth; 
 } */
+*{
+  color: #FFFFFF;
+}
 .container{
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 20px;
   
- /*  border: 1px solid red; */
+  /* border: 1px solid red; */
 }
 body{
   margin: 0;
@@ -25,12 +29,15 @@ body{
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
   contrast(87%);
 }
+.header{
+  background: url('./assets/img/header-bg.jpg');
+}
 .header-container {
   display: flex;
   flex-direction: row;
-  padding: 0 20px;
+  
   height: 90px;
-  background: url('./assets/img/header-bg.jpg');
+  
   background-repeat: no-repeat;
   background-position: center 0;
 }
@@ -48,12 +55,12 @@ body{
   padding-left: 30px;
   line-height: 50px;
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 50px;
-  color: #FFFFFF;
+  
 }
 .section header a {
   
@@ -66,7 +73,7 @@ body{
   display: flex;
   align-items: center;
   margin-left: 31px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter';
   font-weight: 700;
   font-style: normal;
   font-size: 20px;
@@ -81,4 +88,49 @@ body{
   background: url('./assets/img/header-bg.jpg');
   background-repeat: no-repeat;
   background-position: center -90px;
+}
+.wraper-hero{
+  width: 500px;
+  height: 330px;
+  padding: 160px 0 0 60px;
+  
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+.wraper-hero h1{
+  margin: 0;
+  text-transform: capitalize;
+  font-family: 'Merriweather';
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.wraper-hero-text {
+  width: 470px;
+  padding: 10px 0 25px 0;
+  font-family: 'Inter';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+  box-sizing: border-box;
+}
+button{
+  width: 220px;
+  height: 55px;
+  text-align: center;
+  border: 0;
+  color: black;
+  background-color: #bdae82;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: center;
 }
