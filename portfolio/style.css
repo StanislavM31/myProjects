@@ -3,6 +3,7 @@
 } */
 *{
   color: #FFFFFF;
+  margin: 0;
 }
 .container{
   max-width: 1440px;
@@ -10,6 +11,9 @@
   padding: 0 20px;
   
   /* border: 1px solid red; */
+}
+.container:first-child{
+  background-color: none;
 }
 body{
   margin: 0;
@@ -63,7 +67,7 @@ body{
   
 }
 .section header a {
-  
+  border: 1px solid yellow;
   transition: color 0.5s;
 }
 .section-item a:hover {
@@ -88,14 +92,15 @@ body{
   background: url('./assets/img/header-bg.jpg');
   background-repeat: no-repeat;
   background-position: center -90px;
+  background-color: #000000;
 }
 .wraper-hero{
   width: 500px;
   height: 330px;
-  padding: 160px 0 0 60px;
+  padding: 160px 0 330px 60px;
   
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
 .wraper-hero h1{
   margin: 0;
   text-transform: capitalize;
@@ -124,7 +129,7 @@ button{
   height: 55px;
   text-align: center;
   border: 0;
-  color: black;
+  color: #000000;
   background-color: #bdae82;
   font-family: Inter;
   font-size: 20px;
@@ -133,4 +138,44 @@ button{
   line-height: 40px;
   letter-spacing: 0em;
   text-align: center;
+}
+/*    skills    */
+.container section:first-child{
+  justify-content: flex-start;
+}
+section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.wraper-section-title{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.wraper-section-title:before{
+  position: absolute;
+  top:calc(58% - 2px);
+  display: flex;
+  content: '';
+  display: block;
+  height: 2px;
+  width: 700px;
+  background-color: #BDAE82;
+}
+h2{
+  position: relative;
+  align-items: center;
+  padding: 100px 20px 60px 20px;
+  text-transform: capitalize;
+  font-family: Merriweather;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 80px;
+  letter-spacing: 0em;
+  text-align: center;
+  background-color: #000000;
 }
