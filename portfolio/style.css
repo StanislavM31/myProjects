@@ -157,13 +157,13 @@ section{
 
 .wraper-section-title:before{
   position: absolute;
-  top:calc(58% - 2px);
+  top:58%;
   display: flex;
   content: '';
   display: block;
   height: 2px;
   width: 700px;
-  background-color: #BDAE82;
+  background-color: #bdae82;
 }
 h2{
   position: relative;
@@ -177,5 +177,6 @@ h2{
   line-height: 80px;
   letter-spacing: 0em;
   text-align: center;
+  color: #bdae82;
   background-color: #000000;
 }
