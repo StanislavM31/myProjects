@@ -1,9 +1,13 @@
 /* html {
   scroll-behavior: smooth; 
 } */
+:root{
+  --main-color: #bdae82;
+}
 *{
   color: #FFFFFF;
   margin: 0;
+  padding: 0;
 }
 .container{
   max-width: 1440px;
@@ -52,9 +56,6 @@ body{
   margin-left: auto;
   list-style: none;
 }
-.nav-items{
-  
-}
 .nav-link{
   padding-left: 30px;
   line-height: 50px;
@@ -67,7 +68,6 @@ body{
   
 }
 .section header a {
-  border: 1px solid yellow;
   transition: color 0.5s;
 }
 .section-item a:hover {
@@ -85,7 +85,7 @@ body{
   color: #FFFFFF;
 }
 .lang-gold{
-  color: #BDAE82;
+  color: var(--main-color);
 }
 /*    MAIN    */
 .main{
@@ -130,7 +130,7 @@ button{
   text-align: center;
   border: 0;
   color: #000000;
-  background-color: #bdae82;
+  background-color: var(--main-color);
   font-family: Inter;
   font-size: 20px;
   font-style: normal;
@@ -139,33 +139,43 @@ button{
   letter-spacing: 0em;
   text-align: center;
 }
-/*    skills    */
-.container section:first-child{
-  justify-content: flex-start;
+.button:hover{
+  color: #FFFFFF;
 }
+/*    skills    */
+
 section{
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+section:first-child{
+  align-items: flex-start;
 }
 .wraper-section-title{
   position: relative;
   display: flex;
   justify-content: center;
   width: 50%;
+  overflow-x: hidden;
 }
 
 .wraper-section-title:before{
+  /* font-size: 0; */
+  /* white-space: nowrap; */
+  display: inline-block;
   position: absolute;
-  top:58%;
+  top:calc(50% + 20px);
   display: flex;
   content: '';
   display: block;
   height: 2px;
-  width: 700px;
-  background-color: #bdae82;
+  width: 100%;
+  background-color: var(--main-color);
 }
 h2{
+  display:inline-block;
   position: relative;
   align-items: center;
   padding: 100px 20px 60px 20px;
@@ -177,6 +187,116 @@ h2{
   line-height: 80px;
   letter-spacing: 0em;
   text-align: center;
-  color: #bdae82;
+  color: var(--main-color);
   background-color: #000000;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.item{
+  
+  width: 320px;
+  height: 240px;
+  padding: 0 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-position: center top;
+  box-sizing: border-box;
+}
+
+.item p {
+  border: 0px;
+  width: 280px;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.item div{
+  border: 0;
+  box-sizing: border-box;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.camera {
+  background-size: 62px 50px;
+  background-image: url('./assets/img/camera 1.png');
+}
+.video{
+  background-image: url('./assets/img/video 1.png');
+}
+.image{
+  background-image: url('./assets/img/image 1.png');
+}
+.mic{
+  background-image: url('./assets/img/mic 1.png');
+}
+.portfolio-item{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.season{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+  padding-bottom: 60px;
+}
+
+.btn-season-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 55px;
+  border: 2px solid var(--main-color);
+  box-sizing: border-box;
+  background-color: #000000;
+
+  color: var(--main-color);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0em;
+}
+.btn-season-item:last-child{
+  color: black;
+  background-color: var(--main-color);
+}
+
+.video-player {
+  width: 100%;
+  height: 705px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./assets/video/video-player.jpg);
+}
+.video-player img{
+  position: absolute;
+  /* top:50%; left: 50%; */
+  opacity: 0.6;
+}
+.video-player img:hover{
+  opacity: 1;
 }
