@@ -69,9 +69,6 @@ body{
 .section header a {
   transition: color 0.5s;
 }
-.section-item a:hover {
-  color: #4d2323;
-}
 .lang{
   display: flex;
   align-items: center;
@@ -188,14 +185,14 @@ section:first-child{
 }
 .skill-item {
   display: flex;
-  justify-content: space-between;
+
   gap: 40px;
   flex-wrap: wrap;
 }
 .item{
   width: 320px;
   height: 240px;
-  padding: 0 20px 0 20px;
+  padding: 0 20px 10px 20px;
   display: flex;
   flex-direction: column;
   background-repeat: no-repeat;
@@ -242,6 +239,12 @@ section:first-child{
   flex-wrap: wrap;
   gap: 25px;
 }
+.portfolio-item img{
+  vertical-align: bottom;
+  /* line-height: 0; */
+  width: 450px;
+  height: 560px;
+}
 .season{
   display: flex;
   flex-direction: row;
@@ -283,6 +286,8 @@ section:first-child{
   justify-content: center;
   align-items: center;
   background-image: url(./assets/video/video-player.jpg);
+
+  
 }
 .video-player img{
   position: absolute;
