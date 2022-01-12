@@ -1,6 +1,6 @@
-/* html {
+html {
   scroll-behavior: smooth; 
-} */
+}
 :root{
   --color-black: #000;
   --main-color: #bdae82;
@@ -438,12 +438,11 @@ footer .container{
   line-height: 50px;
   letter-spacing: 0em;
 }
-.footer-item.git div span{
+.git{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
   margin-left: 20px;
-  white-space: nowrap;
-}
-.footer-item.git div span:first-child{
-  margin-left: 0;
 }
 ul li {
   list-style: none;
@@ -464,4 +463,10 @@ ul {
 .icon:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
   contrast(87%);
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  color: var(--main-color);
 }
