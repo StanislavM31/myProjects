@@ -50,15 +50,19 @@ body{
 }
 nav{
   margin-left: auto;
+  margin-right: 31px;
 }
 .nav-list{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 30px;
+}
+.nav-list>li:first-child{
+  padding-left: 0;
 }
 .nav-link{
-  /* padding-left: 30px; */
+  padding-left: 30px;
+
   line-height: 50px;
   text-decoration: none;
   font-family: 'Inter';
@@ -66,12 +70,40 @@ nav{
   font-weight: 400;
   font-size: 20px;
   line-height: 50px;
-  
 }
 .section header a {
   transition: color 0.5s;
 }
-.lang{
+.lang-btn{
+  display: inline-block;
+}
+.item-en{
+  margin-right: 8px;
+  box-sizing: content-box;
+}
+.item-ru{
+  margin-left: 8px;
+}
+.lang-btn input[type=radio]{
+  display: none;
+}
+.lang-btn {
+	display: inline-block;
+	cursor: pointer;
+	align-items: center;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 50px;
+}
+.lang-btn input[type=radio]:checked + label {
+	color:var(--main-color);
+}
+.lang-btn label:hover {
+	color: var(--main-color);
+}
+/* .lang{
   display: flex;
   align-items: center;
   margin-left: 31px;
@@ -84,7 +116,7 @@ nav{
 }
 .lang-gold{
   color: var(--main-color);
-}
+} */
 /*    MAIN    */
 .main{
   background: url('./assets/img/header-bg.jpg');
@@ -223,8 +255,9 @@ section:first-child{
   letter-spacing: 0em;
   text-align: center;
 }
-.camera, video, .image, .mic {
+.camera {
   background-size: 62px 50px;
+  background-repeat: no-repeat;
   background-image: url('./assets/svg/camera-1.svg');
 }
 .video{
@@ -464,7 +497,7 @@ footer .container{
 ul li {
   list-style: none;
 }
-ul {
+.socials ul {
   display: flex;
   align-items: center;
   gap: 20px;
