@@ -35,6 +35,7 @@ body{
 .logo:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
   contrast(87%);
+  transition: 0.5s;
 }
 
 .header{
@@ -71,8 +72,9 @@ nav{
   font-size: 20px;
   line-height: 50px;
 }
-.section header a {
-  transition: color 0.5s;
+nav ul li a:hover{
+  color: var(--main-color);
+  transition: 0.3s;
 }
 .lang-btn{
   display: inline-block;
@@ -168,8 +170,9 @@ nav{
   letter-spacing: 0em;
   text-align: center;
 }
-.button:hover{
+button:hover{
   color: #FFFFFF;
+  transition: 0.5s;
 }
 /*    skills    */
 
@@ -337,6 +340,7 @@ button:hover{
 .video-player img:hover{
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
   contrast(87%);
+  transition: 0.5s;
 }
 .price{
   display: flex;
