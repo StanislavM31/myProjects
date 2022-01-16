@@ -36,6 +36,7 @@ body{
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
   contrast(87%);
 }
+
 .header{
   background: url('./assets/img/header-bg.jpg');
 }
@@ -222,18 +223,18 @@ section:first-child{
   letter-spacing: 0em;
   text-align: center;
 }
-.camera {
+.camera, video, .image, .mic {
   background-size: 62px 50px;
-  background-image: url('./assets/img/camera 1.png');
+  background-image: url('./assets/svg/camera-1.svg');
 }
 .video{
-  background-image: url('./assets/img/video 1.png');
+  background-image: url('./assets/svg/video-1.svg');
 }
 .image{
-  background-image: url('./assets/img/image 1.png');
+  background-image: url('./assets/svg/image-1.svg');
 }
 .mic{
-  background-image: url('./assets/img/mic 1.png');
+  background-image: url('./assets/svg/mic-1.svg');
 }
 .portfolio-item{
   display: flex;
