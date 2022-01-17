@@ -428,8 +428,9 @@ button:hover{
   color: var(--main-color);
   padding-bottom: 40px;
 }
-input{
+input, textarea{
   outline: none;
+  padding-top: .3em;
 }
 .input-item{
   box-sizing: border-box;
