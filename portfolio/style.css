@@ -20,7 +20,7 @@ html {
 
 body{
   margin: 0;
-  width: 1440px; /*  */
+  width: 1440px;
   
 }
 .logo {
@@ -130,7 +130,6 @@ nav ul li a:hover{
   width: 500px;
   height: 330px;
   padding: 160px 0 330px 60px;
-  
 }
 
 .wraper-hero h1{
@@ -225,6 +224,7 @@ section:first-child{
 
   gap: 40px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .item{
   width: 320px;
@@ -238,7 +238,7 @@ section:first-child{
 }
 
 .item p {
-  width: 280px;
+  /* width: 280px; */
   padding-top: 100px;
   padding-bottom: 20px;
   font-family: 'Inter';
@@ -276,6 +276,7 @@ section:first-child{
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
+  justify-content: center;
 }
 .portfolio-item img{
   vertical-align: bottom;
@@ -289,6 +290,7 @@ section:first-child{
   justify-content: center;
   gap: 5px;
   padding-bottom: 60px;
+  flex-wrap: wrap;
 }
 
 .btn-season-item{
@@ -346,6 +348,8 @@ button:hover{
   display: flex;
   gap: 25px;
   width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .price-item-wraper{
   display: flex;
@@ -524,4 +528,7 @@ a{
 }
 a:hover{
   color: var(--main-color);
+}
+:focus::placeholder {
+  color: transparent;
 }

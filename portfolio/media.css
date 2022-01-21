@@ -1,0 +1,107 @@
+@media(max-width: 768px){
+  body{
+    width: 768px;
+  }
+  .container {
+    width: calc(100% - 40px);
+  }
+}
+
+  @media (max-width: 768px) {
+    .header{
+      
+      background-size: auto 620px;
+      background-position: -5px -30px;
+    }
+    .header-container {
+      padding-left: 40px;
+      /* border: 1px solid red; */
+      display: flex;
+      justify-content: space-between;
+
+    }
+    nav{
+      display: none;
+    }
+    .wraper-hero{
+      width: 390px;
+      height: 270px;
+      padding: 78px 0 152px 40px;
+    }
+    .wraper-hero h1{
+      padding-bottom: 10px;
+      font-family: 'Merriweather';
+      font-size: 32px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 64px;
+      letter-spacing: 0em;
+      text-align: left;
+      
+    }
+    .wraper-hero-text{
+      padding-bottom: 60px;
+
+      width: 390px;
+      font-family: 'Inter';
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    .main{
+      background-size: auto 620px;
+      background-position: -5px -120px;
+    }
+    .season{
+      width: 445px;
+    }
+    h2.section-title {
+      padding: 80px 20px 50px 20px;
+      font-size: 32px;
+      line-height: 80px;
+    }
+    h2.section-title.first-h2 {
+      padding: 100px 20px 56px 20px;
+      font-size: 32px;
+      line-height: 40px;
+    }
+    .wraper-section-title:not(:last-child):before{
+      top:calc(50% + 17px);
+    }
+
+    .price-item-wraper{
+      width: 505px;
+    }
+  }
+
+  @media (max-width: 768px){
+    section:nth-child(2){
+      padding-bottom: 30px;
+    }
+    .skill-item{
+      gap: 36px 44px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .item{
+      width: 300px;
+      height: 224px;
+      
+      padding: 0 10px 40px 10px;
+      /* box-sizing: content-box; */
+      
+    }
+    .item p {
+      padding-top: 80px;
+    }
+    .item div{
+      line-height: 21px;
+    }
+  }
+  @media (max-width: 768px){
+
+  }
