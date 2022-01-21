@@ -74,7 +74,8 @@
     }
 
     .price-item-wraper{
-      width: 505px;
+      width: 420px;
+      height: 505px;
     }
   }
 
@@ -103,5 +104,19 @@
     }
   }
   @media (max-width: 768px){
-
+    .video-player{
+      width: 768px;
+      height: 418px;
+      background-image: url(./assets/video/video-player-small-bg.jpg);
+      /* background-size: 768px 418px; */
+    }
+    .video-player button img{
+      width: 66px;
+      height: 66px;
+    }
   }
+  @media (max-width: 768px){
+    .price{
+      gap:50px;
+    }
+    }
