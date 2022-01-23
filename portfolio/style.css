@@ -487,7 +487,7 @@ footer .container{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color:var(--color-black);
+  /* background-color:var(--color-black); */
 }
 .git, .rsschool{
   font-family: 'Inter';
@@ -500,7 +500,6 @@ footer .container{
 .git{
   display: flex;
   flex-direction: row;
-  /* gap: 20px; */
 }
 .git>div{
   padding-right: 20px;

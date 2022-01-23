@@ -140,4 +140,37 @@
       text-align: center;
       line-height: 62px;
     }
+    .title-contact button{
+      margin-bottom: 111px;
+    }
   }
+  /* FOOTER */
+  @media (max-width: 768px){
+    .footer{
+      height: 190px;
+      display: flex;
+      background-color:var(--color-black);
+    }
+    footer .container{
+      flex-direction: column;
+      width: 210px;
+      /* height: 100%; */
+      padding-top: 28px;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .git, .rsschool{
+      line-height: 24px;
+    }
+    .git>div{
+      display: flex;
+      padding-right: 20px;
+    }
+    .git div:last-child{
+      padding-right: 0;
+    }
+    .rsschool{
+      padding-top: 16px;
+      padding-bottom: 30px;
+  }
+}
