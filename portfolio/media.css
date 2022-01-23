@@ -59,10 +59,12 @@
     .season{
       width: 445px;
     }
-    h2.section-title {
-      padding: 80px 20px 50px 20px;
+    h2.section-title{
       font-size: 32px;
       line-height: 80px;
+    }
+    h2.section-title:not(.last-h2) {
+      padding: 80px 20px 50px 20px;
     }
     h2.section-title.first-h2 {
       padding: 100px 20px 56px 20px;
@@ -120,3 +122,22 @@
       gap:50px;
     }
     }
+  @media (max-width: 768px) {
+    .section-contact{
+      background-image: url(./assets/img/contacts-small.jpg);
+    }
+    .container-contacts{
+      margin: 80px auto 0;
+    }
+    .section-contact{
+      justify-content: center;
+    }
+    .title-contact{
+      align-items: center;
+      padding: 60px 0 0 0;
+    }
+    .section-title.last-h2{
+      text-align: center;
+      line-height: 62px;
+    }
+  }

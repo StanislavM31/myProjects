@@ -20,7 +20,7 @@ html {
 
 body{
   margin: 0;
-  width: 1440px;
+  /* width: 1440px; */
   
 }
 .logo {
@@ -407,7 +407,7 @@ button:hover{
 /* Contact me */
 
 .container-contacts{
-  width: 1440px;
+  width: 100%;
   margin: 100px auto 0;
 }
 .section-contact{
@@ -415,6 +415,7 @@ button:hover{
   flex-direction: row;
   justify-content: flex-end;
   background-image: url(./assets/img/contacts.jpg);
+  overflow: hidden;
   
   background-repeat: no-repeat;
   }
