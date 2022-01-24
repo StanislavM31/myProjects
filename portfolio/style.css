@@ -41,6 +41,7 @@ body{
 .header{
   background: url('./assets/img/header-bg.jpg');
   background-repeat: no-repeat;
+  background-position: center 0;
 }
 .header-container {
   display: flex;
@@ -482,6 +483,9 @@ input:-webkit-autofill:active {
 }
 
 /* footer */
+footer{
+  background-color: var(--color-black);
+}
 footer .container{
   height: 150px;
   display: flex;
