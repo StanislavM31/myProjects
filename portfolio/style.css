@@ -20,8 +20,8 @@ html {
 
 body{
   margin: 0;
-  width: 1440px; /*  */
-  
+  /* width: 1440px; */
+  overflow-x: hidden;
 }
 .logo {
   margin: auto 0;
@@ -40,8 +40,14 @@ body{
 
 .header{
   background: url('./assets/img/header-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-color: var(--color-black);
+  position: relative;
+  /* overflow-x: hidden; */
 }
 .header-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -130,7 +136,6 @@ nav ul li a:hover{
   width: 500px;
   height: 330px;
   padding: 160px 0 330px 60px;
-  
 }
 
 .wraper-hero h1{
@@ -225,6 +230,7 @@ section:first-child{
 
   gap: 40px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .item{
   width: 320px;
@@ -238,7 +244,7 @@ section:first-child{
 }
 
 .item p {
-  width: 280px;
+  /* width: 280px; */
   padding-top: 100px;
   padding-bottom: 20px;
   font-family: 'Inter';
@@ -276,6 +282,7 @@ section:first-child{
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
+  justify-content: center;
 }
 .portfolio-item img{
   vertical-align: bottom;
@@ -289,6 +296,7 @@ section:first-child{
   justify-content: center;
   gap: 5px;
   padding-bottom: 60px;
+  flex-wrap: wrap;
 }
 
 .btn-season-item{
@@ -329,7 +337,7 @@ button:hover{
   justify-content: center;
   align-items: center;
   background-image: url(./assets/video/video-player.jpg);
-
+  background-repeat: no-repeat;
   
 }
 .video-player button {
@@ -346,17 +354,20 @@ button:hover{
   display: flex;
   gap: 25px;
   width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 10;
 }
 .price-item-wraper{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 33.3%;
-  border: 3px solid var(--main-color);
   
+  outline: 3px solid var(--main-color);
 }
 .price-item-wraper span{
   display: block;
+  
 }
 .price-item-1{
   padding-top: 43px;
@@ -394,7 +405,9 @@ button:hover{
 .price button{
   border: 0px;
   margin-top: 40px;
+  margin: 40px 115px 40px 115px;
   margin-bottom: 43px;
+  
 }
 /* Contact me */
 
@@ -407,6 +420,7 @@ button:hover{
   flex-direction: row;
   justify-content: flex-end;
   background-image: url(./assets/img/contacts.jpg);
+  overflow: hidden;
   
   background-repeat: no-repeat;
   }
@@ -473,12 +487,15 @@ input:-webkit-autofill:active {
 }
 
 /* footer */
+footer{
+  background-color: var(--color-black);
+}
 footer .container{
   height: 150px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color:var(--color-black);
+  /* background-color:var(--color-black); */
 }
 .git, .rsschool{
   font-family: 'Inter';
@@ -491,7 +508,6 @@ footer .container{
 .git{
   display: flex;
   flex-direction: row;
-  /* gap: 20px; */
 }
 .git>div{
   padding-right: 20px;
@@ -524,4 +540,104 @@ a{
 }
 a:hover{
   color: var(--main-color);
+}
+:focus::placeholder {
+  color: transparent;
+}
+/* BURGER-MENU */
+
+.burger-icon{
+  
+  display: none;
+  width: 50px;
+  height: 50px; 
+  /* display: inline-block; */
+  user-select: none;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 44px;
+}
+
+.bar-1, .bar-2, .bar-3{
+  width: 50px;
+  height: 3px;
+  background-color: #FFFFFF;
+  margin: 10px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.burger-icon:hover > .bar-1{
+  background-color: var(--main-color);
+}
+.burger-icon:hover > .bar-2{
+  background-color: var(--main-color);
+}
+.burger-icon:hover > .bar-3{
+  background-color: var(--main-color);
+}
+
+.burger-icon.open .bar-1 {
+  transform: rotate(-45deg) translate(-10px, 10px);
+}
+
+.burger-icon.open .bar-2 {
+  opacity: 0;
+  transition: 0.3s;
+  display: none;
+}
+
+.burger-icon.open .bar-3 {
+  transform: rotate(45deg) translate(1px, 1px);
+}
+
+.burger-menu{
+  position: absolute;
+  top: 0px;
+  right: 0;
+  right: -620px;
+
+  transition: 2s;
+  width: 620px;
+  height: 1024px;
+  overflow-x: hidden;
+  background-color: var(--color-black);
+  font-family: Inter;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 73px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  z-index: 15;
+}
+.burger-menu ul{
+  margin: 64px 0 0 127px;
+}
+.burger-menu ul li {
+  margin-top: 16px;
+}
+.burger-menu ul li:first-child{
+  margin-top: 0;
+}
+.burger-menu ul li:hover{
+  color: var(--main-color);
+}
+.close{
+  width: 50px;
+  height: 50px;
+  margin: 21px 63px 0 auto;
+  background-image: url(./assets/svg/burg-m-close-icon.svg);
+}
+.close:hover{
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+  contrast(87%);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.active{
+  right: 0;
+}
+.inactive{
+  right: -620px;
 }
