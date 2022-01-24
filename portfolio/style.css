@@ -42,6 +42,7 @@ body{
   background: url('./assets/img/header-bg.jpg');
   background-repeat: no-repeat;
   background-position: center 0;
+  background-color: var(--color-black);
 }
 .header-container {
   display: flex;
