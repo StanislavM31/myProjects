@@ -34,3 +34,37 @@ console.log(
     - обязательное требование к интерактивности: плавное изменение внешнего вида элемента при наведении и клике не влияющее на соседние элементы +5
     ИТОГО: 100
     `);
+    /* БУРГЕР */
+const hamburger = document.querySelector('.burger-icon');
+
+function toggleMenu() {
+  hamburger.classList.toggle('open');
+}
+hamburger.addEventListener('click', toggleMenu);
+
+/* БОКОВОЕ МЕНЮ */
+function closeMenu(){
+  if (event.target.classList.contains('nav-link')) {
+    // здесь код, удаляющий класс `'open'` у гамбургер-иконки и у меню
+    navbar.classList.remove('open');
+    hamburger.addEventListener('close', toggleMenu);
+  }
+}
+
+let navbar = document.querySelector('.burger-menu');
+
+document.querySelector('#burger-icon-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+    
+}
+
+
+
+document.querySelector('#close-burger-icon-btn').onclick = () =>{
+  hamburger.addEventListener('close', toggleMenu);
+  document.querySelector('#burger-icon-btn').classList.remove('open');
+  navbar.classList.toggle('active');
+}
+
+const navLinks = document.querySelectorAll('burger-menu-nav-link');
+navLinks.forEach((el) => el.addEventListener('click', closeMenu));

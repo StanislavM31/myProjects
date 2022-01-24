@@ -21,7 +21,7 @@ html {
 body{
   margin: 0;
   /* width: 1440px; */
-  
+  overflow-x: hidden;
 }
 .logo {
   margin: auto 0;
@@ -44,6 +44,7 @@ body{
   background-position: center 0;
   background-color: var(--color-black);
   position: relative;
+  /* overflow-x: hidden; */
 }
 .header-container {
   position: relative;
@@ -546,20 +547,25 @@ a:hover{
 /* BURGER-MENU */
 
 .burger-icon{
+  
   display: none;
+  width: 50px;
   height: 50px; 
   /* display: inline-block; */
+  user-select: none;
   cursor: pointer;
   margin-left: 20px;
   margin-right: 44px;
 }
+
 .bar-1, .bar-2, .bar-3{
   width: 50px;
   height: 3px;
   background-color: #FFFFFF;
   margin: 10px 0;
-  transition: 0.4s;
+  transition: all 0.3s ease-in-out;
 }
+
 .burger-icon:hover > .bar-1{
   background-color: var(--main-color);
 }
@@ -569,16 +575,31 @@ a:hover{
 .burger-icon:hover > .bar-3{
   background-color: var(--main-color);
 }
+
+.burger-icon.open .bar-1 {
+  transform: rotate(-45deg) translate(-10px, 10px);
+}
+
+.burger-icon.open .bar-2 {
+  opacity: 0;
+  transition: 0.3s;
+  display: none;
+}
+
+.burger-icon.open .bar-3 {
+  transform: rotate(45deg) translate(1px, 1px);
+}
+
 .burger-menu{
   position: absolute;
   top: 0px;
   right: 0;
   right: -620px;
 
-  transition: 0.3s;
+  transition: 2s;
   width: 620px;
   height: 1024px;
-
+  overflow-x: hidden;
   background-color: var(--color-black);
   font-family: Inter;
   font-size: 35px;
@@ -612,4 +633,11 @@ a:hover{
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
   contrast(87%);
   transition: 0.3s;
+  cursor: pointer;
+}
+.active{
+  right: 0;
+}
+.inactive{
+  right: -620px;
 }
