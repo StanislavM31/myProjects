@@ -174,3 +174,18 @@
       padding-bottom: 30px;
   }
 }
+/* BURGER-MENU */
+@media (max-width: 768px){
+  .burger-icon{
+    display: inline-block;
+  }
+  .lang{
+    margin-left: auto;
+  }
+  .item-en {
+    margin-right: 6px;
+  }
+  .item-ru {
+    margin-left: 15px;
+}
+}
