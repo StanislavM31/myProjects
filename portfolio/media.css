@@ -110,10 +110,11 @@
   }
   @media (max-width: 768px){
     .video-player{
-      width: 768px;
+      width: 100%;
       height: 418px;
       background-image: url(./assets/video/video-player-small-bg.jpg);
-      /* background-size: 768px 418px; */
+      background-size: auto;
+      /* background-size: contain; */
     }
     .video-player button img{
       width: 66px;
@@ -192,4 +193,9 @@
   .item-ru {
     margin-left: 15px;
 }
+}
+@media (max-width: 768px){
+  .header .burger-menu{
+    position: fixed;
+  }
 }
