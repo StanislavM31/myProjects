@@ -8,7 +8,7 @@
     overflow: hidden;
   }
 }
-@media(max-width: 769px){
+@media(min-width: 768px){
   .burger-menu{
     display: block;
   }
@@ -18,7 +18,7 @@
       height: 90px;
       background-size: auto 620px;
       background-position: -5px -30px;
-      overflow: hidden;
+      width: 768px;
     }
     
     .header-container {

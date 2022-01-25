@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth; 
+  overflow: hidden;
 }
 :root{
   --color-black: #000;
@@ -575,9 +576,7 @@ a:hover{
 .burger-icon:hover > .bar-3{
   background-color: var(--main-color);
 }
-.burger-menu{
-  display: none;
-}
+
 .burger-icon.open .bar-1 {
   transform: rotate(-45deg) translate(-10px, 10px);
 }
