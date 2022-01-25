@@ -1,6 +1,5 @@
 html {
   scroll-behavior: smooth; 
-  overflow: hidden;
 }
 :root{
   --color-black: #000;
@@ -413,7 +412,7 @@ button:hover{
 /* Contact me */
 
 .container-contacts{
-  width: 1440px;
+  width: 100%;
   margin: 100px auto 0;
 }
 .section-contact{
