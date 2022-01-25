@@ -54,6 +54,7 @@ body{
   height: 90px;
   background-repeat: no-repeat;
   background-position: center 0;
+  margin-right: 33px;
 }
 nav{
   margin-left: auto;
@@ -412,7 +413,7 @@ button:hover{
 /* Contact me */
 
 .container-contacts{
-  width: 100%;
+  width: 1440px;
   margin: 100px auto 0;
 }
 .section-contact{
@@ -423,6 +424,7 @@ button:hover{
   overflow: hidden;
   
   background-repeat: no-repeat;
+  
   }
 .title-contact{
   display: flex;
@@ -555,7 +557,7 @@ a:hover{
   user-select: none;
   cursor: pointer;
   margin-left: 20px;
-  margin-right: 44px;
+  margin-right: 24px;
 }
 
 .bar-1, .bar-2, .bar-3{
