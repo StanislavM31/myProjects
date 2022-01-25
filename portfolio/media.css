@@ -1,25 +1,32 @@
 @media(max-width: 768px){
   body{
     width: 768px;
+    overflow: hidden;
   }
   .container {
     width: calc(100% - 40px);
+    overflow: hidden;
   }
 }
-
+@media(min-width: 768px){
+  .burger-menu{
+    display: block;
+  }
+}
   @media (max-width: 768px) {
     .header{
       height: 90px;
       background-size: auto 620px;
       background-position: -5px -30px;
-      
+      width: 768px;
     }
+    
     .header-container {
       padding-left: 40px;
       /* border: 1px solid red; */
       display: flex;
       justify-content: space-between;
-
+      overflow: hidden;
     }
     nav{
       display: none;
@@ -126,6 +133,7 @@
   @media (max-width: 768px) {
     .section-contact{
       background-image: url(./assets/img/contacts-small.jpg);
+      width: 768px;
     }
     .container-contacts{
       margin: 80px auto 0;
