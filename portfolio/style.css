@@ -412,7 +412,7 @@ button:hover{
 /* Contact me */
 
 .container-contacts{
-  width: 100%;
+  width: 1440px;
   margin: 100px auto 0;
 }
 .section-contact{
@@ -423,6 +423,7 @@ button:hover{
   overflow: hidden;
   
   background-repeat: no-repeat;
+  
   }
 .title-contact{
   display: flex;

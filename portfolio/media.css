@@ -1,6 +1,7 @@
 @media(max-width: 768px){
   body{
     width: 768px;
+    
   }
   .container {
     width: calc(100% - 40px);
@@ -124,11 +125,13 @@
     }
     }
   @media (max-width: 768px) {
-    .section-contact{
-      background-image: url(./assets/img/contacts-small.jpg);
-    }
     .container-contacts{
+      width: 768px;
       margin: 80px auto 0;
+    }
+    .section-contact{
+      width: 100%;
+      background-image: url(./assets/img/contacts-small.jpg);
     }
     .section-contact{
       justify-content: center;
