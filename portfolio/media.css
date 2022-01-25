@@ -1,8 +1,8 @@
 @media(max-width: 768px){
-  body{
+/*   body{
     width: 768px;
     
-  }
+  } */
   .container {
     width: calc(100% - 40px);
   }
@@ -20,7 +20,8 @@
       /* border: 1px solid red; */
       display: flex;
       justify-content: space-between;
-
+      margin-right: 0px;
+      
     }
     nav{
       display: none;
