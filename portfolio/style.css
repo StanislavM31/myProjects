@@ -54,7 +54,8 @@ body{
   height: 90px;
   background-repeat: no-repeat;
   background-position: center 0;
-  margin-right: 33px;
+  /* margin-right: 33px; */
+  padding: 0 20px 0 20px;
 }
 nav{
   margin-left: auto;
@@ -647,4 +648,21 @@ a:hover{
 }
 .inactive{
   right: -620px;
+}
+#switchMode{
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  border: 0;
+  margin-left: 35px;
+}
+#switchMode img{
+  width: 45px;
+  height: 45px;
+}
+#switchMode img:hover{
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+  contrast(87%);
+  transition: 0.3s;
+  cursor: pointer;
 }

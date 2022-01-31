@@ -1,9 +1,11 @@
 console.log(
     ` Сделал только смену изображений по сезонам по клике кнопок +25
-    и я не уверен работает ли кэширование изображений
-    можете написать ваши ники в discord, господа проверяющие. возможно успею еще чтонибудь наШкодить до окончания кроссчека, \n
+    сделал переключение на темную/светлую тему ( не отображается нажатая кнопка в секции Portfoio/season) +15
+    и я не уверен работает ли кэширование изображений =(
+    
+    можете написать ваши ники в discord, господа проверяющие. возможно успею еще чтонибудь наШкодить до окончания кроссчека, /n
     с уважением и пониманием)))
-    ИТОГО: +25
+    ИТОГО: примерно 45
     `);
 
 
@@ -90,7 +92,7 @@ function changeClassActive(s){
 
 /* PreLoader */
 const seasons = ['winter', 'spring', 'summer', 'autumn']; 
-
+const portfolioButtons = document.querySelector('.btn-season-item'); 
 portfolioButtons.addEventListener('click', (event) => changeImage(event)); 
  
 function preloadSummerImages() { 
@@ -127,4 +129,20 @@ preloadSpringImages();
 
 /* смена темы */
 
+
 let switchMode = document.getElementById('switchMode');
+
+switchMode.onclick = function () {
+  let theme = document.getElementById("theme");
+  let imgswitchMode = document.querySelector(".header-container button img");
+  
+  if(theme.getAttribute("href") == "light-mode.css") {
+    theme.href = "style.css";
+    imgswitchMode.src="./assets/svg/sun.svg";
+  } else {
+    theme.href = "light-mode.css";
+    imgswitchMode.src="./assets/svg/lune.svg";
+  }
+
+  
+}
