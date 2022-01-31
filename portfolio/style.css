@@ -161,7 +161,7 @@ nav ul li a:hover{
   letter-spacing: 0em;
   text-align: left;
 }
-.wraper-hero button, .season button:last-child, .price button, .section-contact button{
+.wraper-hero button, .price button, .section-contact button{
   width: 220px;
   height: 55px;
   text-align: center;
@@ -176,6 +176,7 @@ nav ul li a:hover{
   letter-spacing: 0em;
   text-align: center;
 }
+
 button:hover{
   color: #FFFFFF;
   transition: 0.5s;
@@ -228,7 +229,7 @@ section:first-child{
 }
 .skill-item {
   display: flex;
-
+  margin-left: 25px;
   gap: 40px;
   flex-wrap: wrap;
   justify-content: center;
@@ -317,14 +318,18 @@ section:first-child{
   line-height: 40px;
   letter-spacing: 0em;
 }
-.btn-season-item:last-child{
+.active-button{
   color: var(--color-black);
   background-color: var(--main-color);
 }
-.btn-season-item:last-child:hover{
+/* .btn-season-item:last-child{
+  color: var(--color-black);
+  background-color: var(--color-black);
+} */
+/* .btn-season-item:last-child:hover{
   color: #FFFFFF;
   
-}
+} */
 button:hover{
   cursor: pointer;
   color: #FFFFFF;
@@ -593,7 +598,7 @@ a:hover{
 }
 
 .burger-menu{
-  position: absolute;
+  position: fixed;
   top: 0px;
   right: 0;
   right: -620px;
