@@ -22,6 +22,8 @@ console.log(
 при клике по ссылке в адаптивном меню адаптивное меню плавно скрывается, крестик превращается в бургер-иконку +4
     ИТОГО: 75
     `);
+
+
     /* БУРГЕР */
 const hamburger = document.querySelector('.burger-icon');
 
@@ -56,3 +58,90 @@ document.querySelector('#close-burger-icon-btn').onclick = () =>{
 
 const navLinks = document.querySelectorAll('burger-menu-nav-link');
 navLinks.forEach((el) => el.addEventListener('click', closeMenu));
+/* portfolio-photo */
+const portfolioBtn = document.querySelector('.btn-season-item');
+const portfolioImage = document.querySelectorAll('.portfolio-image');
+
+
+let activBtn = document.querySelectorAll(`button.btn-season-item`);
+activBtn.forEach((elem) => elem.classList.remove('active-button'));
+/* portfolioBtn.addEventListener('click', () => {
+  portfolioImage.src = "./assets/img/winter/1.jpg"
+}); */
+
+/* portfolioBtn.addEventListener('click', () => {
+  portfolioImage.forEach((img, index) => img.src = `./assets/img/winter/${index + 1}.jpg`);
+}); */
+
+
+
+const portfolioBtns = document.querySelector('.season'); //общий родитель для кнопок
+portfolioBtns.addEventListener('click', changeImage); //по клику выполнить функцию changeImage()
+
+function changeImage(event) {
+  if(event.target.classList.contains('btn-season-item')) { //undefined reading 'target'
+
+    // здесь код функции, меняющей src изображений
+    let s = event.target.dataset.season; //dataset
+    console.log(s);
+    portfolioImage.forEach((img, index) => img.src =`./assets/img/${s}/${index+1}.jpg`);
+    
+    /* let activBtn= document.querySelector(`.btn-season-item[data-season =${s} ]`); */
+
+    changeClassActive(s);
+    
+  }
+}
+
+function changeClassActive(s){
+
+  let activBtn = document.querySelectorAll(`button.btn-season-item`);
+  console.log(activBtn);//список кнопок
+//удалим классы
+  /* activBtn.classList.remove('active-button'); */
+  activBtn.forEach((elem) => elem.classList.remove('active-button'));
+  let goldenBtn= document.querySelector(`.btn-season-item[data-season =${s} ]`);
+  goldenBtn.classList.toggle('active-button');
+} 
+
+
+/* PreLoader */
+const seasons = ['winter', 'spring', 'summer', 'autumn']; 
+
+portfolioButtons.addEventListener('click', (event) => changeImage(event)); 
+ 
+function preloadSummerImages() { 
+ for(let i = 1; i <= 6; i++) { 
+ const img = new Image(); 
+ img.src = `./assets/img/summer/portfolio-image-${i}.jpg`; 
+ } 
+} 
+preloadSummerImages(); 
+ 
+function preloadAutumnImages() { 
+ for(let i = 1; i <= 6; i++) { 
+ const img = new Image(); 
+ img.src = `./assets/img/autumn/portfolio-image-${i}.jpg`; 
+ } 
+} 
+preloadAutumnImages(); 
+ 
+function preloadWinterImages() { 
+ for(let i = 1; i <= 6; i++) { 
+ const img = new Image(); 
+ img.src = `./assets/img/winter/portfolio-image-${i}.jpg`; 
+ } 
+} 
+preloadWinterImages(); 
+ 
+function preloadSpringImages() { 
+ for(let i = 1; i <= 6; i++) { 
+ const img = new Image(); 
+ img.src = `./assets/img/spring/portfolio-image-${i}.jpg`; 
+ } 
+} 
+preloadSpringImages();
+
+/* смена темы */
+
+let switchMode = document.getElementById('switchMode');
