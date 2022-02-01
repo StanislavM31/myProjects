@@ -97,3 +97,12 @@ a.nav-link:hover{
     background-image: url(./assets/svg/close-for-light-mode.svg);
     background-repeat: no-repeat;
 }
+@media (max-width: 768px){
+    #contact-light-theme {
+    
+        background-image: url(./assets/img/contacts-small-light-theme.jpg);
+    }
+    #footer-light-theme {
+        background-color: #fff;
+    }
+}
