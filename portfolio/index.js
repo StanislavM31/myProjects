@@ -92,7 +92,9 @@ function changeClassActive(s){
 
 /* PreLoader */
 const seasons = ['winter', 'spring', 'summer', 'autumn']; 
-const portfolioButtons = document.querySelector('.btn-season-item'); 
+
+const portfolioButtons = document.querySelector('.btn-season-item');
+
 portfolioButtons.addEventListener('click', (event) => changeImage(event)); 
  
 function preloadSummerImages() { 
@@ -143,6 +145,4 @@ switchMode.onclick = function () {
     theme.href = "light-mode.css";
     imgswitchMode.src="./assets/svg/lune.svg";
   }
-
-  
 }
