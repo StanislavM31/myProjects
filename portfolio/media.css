@@ -199,9 +199,4 @@
     margin-left: 15px;
 }
 }
-@media (max-width: 768px){
-  .header .burger-menu{
-    position: fixed;
-  }
-}
 
