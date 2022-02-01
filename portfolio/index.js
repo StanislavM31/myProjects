@@ -159,7 +159,7 @@ function preloadSpringImages() {
  } 
 } 
 preloadSpringImages();
-console.log(seasonsArr);
+/* console.log(seasonsArr); */
 /* смена темы */
 
 
@@ -173,12 +173,12 @@ switchMode.onclick = function () {
   if(theme.getAttribute("href") == "light-mode.css") {
     theme.href = "style.css";
     imgswitchMode.src="./assets/svg/sun.svg";
-    flag = 1;
+    
   } else {
     theme.href = "light-mode.css";
     imgswitchMode.src="./assets/svg/lune.svg";
-    flag = 2;
+    
   }
-  console.log(flag);
+  
 }
 
