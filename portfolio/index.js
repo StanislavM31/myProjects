@@ -61,6 +61,8 @@ activBtn.forEach((elem) => elem.classList.remove('active-button'));
 
 
 const portfolioBtns = document.querySelector('.season'); //общий родитель для кнопок
+
+let flag; // глобальный флаг для отслеживания цвета темы
 portfolioBtns.addEventListener('click', changeImage); //по клику выполнить функцию changeImage()
 
 function changeImage(event) {
@@ -68,11 +70,13 @@ function changeImage(event) {
 
     // здесь код функции, меняющей src изображений
     let s = event.target.dataset.season; //dataset
-    console.log(s);
+    console.log("сейчас s =", s);
+
+    console.log(event);
     portfolioImage.forEach((img, index) => img.src =`./assets/img/${s}/${index+1}.jpg`);
     
     /* let activBtn= document.querySelector(`.btn-season-item[data-season =${s} ]`); */
-
+    
     changeClassActive(s);
     
   }
@@ -86,18 +90,31 @@ function changeClassActive(s){
   /* activBtn.classList.remove('active-button'); */
   activBtn.forEach((elem) => elem.classList.remove('active-button'));
   let goldenBtn= document.querySelector(`.btn-season-item[data-season =${s} ]`);
+  
+  /* flag == 2 ? goldenBtn.classList.toggle('active-light'):goldenBtn.classList.toggle('active-button'); */
   goldenBtn.classList.toggle('active-button');
+  getButtonBlack(goldenBtn);
 } 
 
+function getButtonBlack(b){
+  let activBtn = document.querySelectorAll(`button.btn-season-item`);
+  
+  activBtn.forEach((elem) => elem.classList.remove('active-light'));
+
+  let temp = document.querySelector(`.active-button`);
+  temp.classList.add('active-light');
+  
+  /* goldenBtn.classList.toggle('.active-button'); */
+}
 
 /* PreLoader */
 const seasonsArr = ['winter', 'spring', 'summer', 'autumn'];
 console.log('#0');
-console.log(seasonsArr);
+/* console.log(seasonsArr); */
 
 const portfolioButtons = document.querySelector('.btn-season-item'); 
 const portfolioImages = document.querySelectorAll('.portfolio-image'); 
-console.log(portfolioImages);
+/* console.log(portfolioImages); */
 
 portfolioBtns.addEventListener('click', (event) => changeImage(event)); 
  
@@ -110,8 +127,7 @@ function preloadSummerImages() {
    seasonsArr.push(img);
  } 
 }
-preloadSummerImages(); 
-console.log(seasonsArr);
+preloadSummerImages();
  
 function preloadAutumnImages() { 
  for(let i = 1; i <= 6; i++) { 
@@ -121,7 +137,7 @@ function preloadAutumnImages() {
  } 
 } 
 preloadAutumnImages(); 
-console.log(seasonsArr);
+
 function preloadWinterImages() { 
  for(let i = 1; i <= 6; i++) { 
   const img = new Image(); 
@@ -130,7 +146,7 @@ function preloadWinterImages() {
  } 
 } 
 preloadWinterImages(); 
-console.log(seasonsArr);
+
 function preloadSpringImages() { 
   for(let i = 1; i <= 6; i++) { 
   const img = new Image(); 
@@ -146,15 +162,19 @@ console.log(seasonsArr);
 let switchMode = document.getElementById('switchMode');
 
 switchMode.onclick = function () {
-  let theme = document.getElementById("theme-light");
-  let imgswitchMode = document.querySelector(".header-container button img");
   
+  let imgswitchMode = document.querySelector(".header-container button img");
+  let theme = document.getElementById("theme-light"); //ловим тему по id
+
   if(theme.getAttribute("href") == "light-mode.css") {
     theme.href = "style.css";
     imgswitchMode.src="./assets/svg/sun.svg";
+    flag = 1;
   } else {
     theme.href = "light-mode.css";
     imgswitchMode.src="./assets/svg/lune.svg";
+    flag = 2;
   }
+  console.log(flag);
 }
 

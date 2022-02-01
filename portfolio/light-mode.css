@@ -107,3 +107,7 @@ a.nav-link:hover{
         background-color: #fff;
     }
 }
+
+.active-light{
+    background-color: var(--color-black);  
+  }
