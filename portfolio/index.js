@@ -91,51 +91,62 @@ function changeClassActive(s){
 
 
 /* PreLoader */
-const seasons = ['winter', 'spring', 'summer', 'autumn']; 
+const seasonsArr = ['winter', 'spring', 'summer', 'autumn'];
+console.log('#0');
+console.log(seasonsArr);
 
-const portfolioButtons = document.querySelector('.btn-season-item');
+const portfolioButtons = document.querySelector('.btn-season-item'); 
+const portfolioImages = document.querySelectorAll('.portfolio-image'); 
+console.log(portfolioImages);
 
-portfolioButtons.addEventListener('click', (event) => changeImage(event)); 
+portfolioBtns.addEventListener('click', (event) => changeImage(event)); 
  
+
+/* ========================== */
 function preloadSummerImages() { 
- for(let i = 1; i <= 6; i++) { 
- const img = new Image(); 
- img.src = `./assets/img/summer/portfolio-image-${i}.jpg`; 
+ for(let i = 1; i <= 6; i++) {
+   const img = new Image();
+   img.src = `./assets/img/summer/${i}.jpg`;
+   seasonsArr.push(img);
  } 
-} 
+}
 preloadSummerImages(); 
+console.log(seasonsArr);
  
 function preloadAutumnImages() { 
  for(let i = 1; i <= 6; i++) { 
- const img = new Image(); 
- img.src = `./assets/img/autumn/portfolio-image-${i}.jpg`; 
+  const img = new Image(); 
+  img.src = `./assets/img/autumn/${i}.jpg`;
+  seasonsArr.push(img);
  } 
 } 
 preloadAutumnImages(); 
- 
+console.log(seasonsArr);
 function preloadWinterImages() { 
  for(let i = 1; i <= 6; i++) { 
- const img = new Image(); 
- img.src = `./assets/img/winter/portfolio-image-${i}.jpg`; 
+  const img = new Image(); 
+  img.src = `./assets/img/winter/${i}.jpg`;
+  seasonsArr.push(img);
  } 
 } 
 preloadWinterImages(); 
- 
+console.log(seasonsArr);
 function preloadSpringImages() { 
- for(let i = 1; i <= 6; i++) { 
- const img = new Image(); 
- img.src = `./assets/img/spring/portfolio-image-${i}.jpg`; 
+  for(let i = 1; i <= 6; i++) { 
+  const img = new Image(); 
+  img.src = `./assets/img/spring/${i}.jpg`;
+ seasonsArr.push(img);
  } 
 } 
 preloadSpringImages();
-
+console.log(seasonsArr);
 /* смена темы */
 
 
 let switchMode = document.getElementById('switchMode');
 
 switchMode.onclick = function () {
-  let theme = document.getElementById("theme");
+  let theme = document.getElementById("theme-light");
   let imgswitchMode = document.querySelector(".header-container button img");
   
   if(theme.getAttribute("href") == "light-mode.css") {

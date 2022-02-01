@@ -45,6 +45,9 @@ body{
   background-color: var(--color-black);
   position: relative;
   /* overflow-x: hidden; */
+  max-width: 1440px;
+  margin: 0 auto;
+
 }
 .header-container {
   position: relative;
@@ -55,7 +58,6 @@ body{
   background-repeat: no-repeat;
   background-position: center 0;
   /* margin-right: 33px; */
-  padding: 0 20px 0 20px;
 }
 nav{
   margin-left: auto;
