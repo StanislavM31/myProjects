@@ -13,6 +13,7 @@ console.log(
     `);
 
 
+
     /* БУРГЕР */
 const hamburger = document.querySelector('.burger-icon');
 
@@ -113,7 +114,7 @@ function getButtonBlack(b){
 
 /* PreLoader */
 const seasonsArr = ['winter', 'spring', 'summer', 'autumn'];
-console.log('#0');
+
 /* console.log(seasonsArr); */
 
 const portfolioButtons = document.querySelector('.btn-season-item'); 
@@ -182,3 +183,118 @@ switchMode.onclick = function () {
   
 }
 
+/* ========================= */
+function setLocalStorage() {
+  localStorage.setItem('lang', lang);
+}
+window.addEventListener('beforeunload', setLocalStorage)
+
+function getLocalStorage() {
+  if(localStorage.getItem('lang')) {
+    const lang = localStorage.getItem('lang');
+    getTranslate(lang);
+  }
+}
+window.addEventListener('load', getLocalStorage)
+/* ========================= */
+
+/* TRANSLATION */
+const i18Obj = {
+  'en': {
+    'skill-text-1': 'High-quality photos in the studio and on the nature',
+    'skills': 'Skills',
+    'portfolio': 'Portfolio',
+    'video': 'Video',
+    'price': 'Price',
+    'contacts': 'Contacts',
+    'hero-title': 'Alexa Rise',
+    'hero-text': 'Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise',
+    'hire': 'Hire me'
+  },
+  'ru' : {
+    'skill-text-1': 'Высококачественные фото в студии и на природе',
+    'skills': 'Навыки',
+    'portfolio': 'Портфолио',
+    'video': 'Видео',
+    'price': 'Цены',
+    'contacts': 'Контакты',
+    'hero-title': 'Алекса Райс',
+    'hero-text': 'Сохраните искренние эмоции, романтические переживания и счастливые моменты жизни вместе с профессиональным фотографом',
+    'hire': 'Пригласить',
+  }
+}
+/* Если вопрос был про то, как именно реализовать саму кнопку - все просто. Создаешь , две штуки с разными id. 
+После этого JS-ом вешаешь обработчик событий. elementButton = document.getElementById(id);
+
+На него вешаешь обработчик - elementButtom.addEventListener("click", function(){тело функции}); */
+
+/* let rus = document.getElementById("unique-id-for-ru"); */
+let radio = document.getElementsByName('lang');
+console.log("rus = ", radio);
+let m = document.querySelectorAll('input[type=radio]');
+let u = document.getElementById('uniqid1');
+let y = document.getElementById('uniqid2');
+
+y.onclick = function(event) { getData(); };
+u.onclick = function(event) { getData(); };
+
+
+/* radio.forEach(e=>console.log(e.value)); */
+/* u.addEventListener("click", x);
+y.addEventListener("click", x); */
+
+
+function getData() {
+  let init;
+  var inputs = document.querySelectorAll('input[type=radio]');
+  inputs.forEach( function (radio){
+    if (radio.checked){
+      console.log(radio.value + " is checked");
+      init = radio.value;
+      console.log(radio.value);//получил ru
+    }
+      else
+      console.log(radio.value + " is not checked");
+
+    });
+    
+/*     radio.forEach(function(item){
+      if (item.checked == 'true'){
+        console.log('priv');
+        
+      }
+      console.log(init);
+    }); */
+
+    /* return init; */
+    getTranslate(init);
+  }
+  
+/* let language = document.getElementsByTagName("input"); */
+/* let language = document.getElementById("unique-id-for-ru"); */
+/* console.log("language = ", language); */
+/* let temp = language.id; */
+/* rus.addEventListener("click", getTranslate(rus)); */
+
+/* language.addEventListener("click", getTranslate(temp)); */
+
+
+const foo = (event) =>{
+  console.log(event);
+  /* console.log(s); */
+  console.log(this.value);
+  /* let s123 = event.target.label.innerText; */
+  
+  console.log("Поздравляю. Вы скоро отьедете кукухой");
+}
+
+/* radio.addEventListener("click", foo); */
+
+/* radio.addEventListener("click", foo()); */
+
+function getTranslate(temp){
+
+  console.log("клик 1", temp);
+  let listOfdata = document.querySelectorAll('[data-i18]');
+  listOfdata.forEach(elem=> elem.textContent = i18Obj[`${temp}`][elem.dataset.i18]);
+}
