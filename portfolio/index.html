@@ -23,24 +23,27 @@
                 <a href="#" class="logo"></a>
                 <nav>
                     <ul class="nav-list">
-                        <li class="nav-items"><a href="#Skills" class="nav-link">Skills</a></li>
-                        <li class="nav-items"><a href="#Portfolio" class="nav-link">Portfolio</a></li>
-                        <li class="nav-items"><a href="#Video" class="nav-link">Video</a></li>
-                        <li class="nav-items"><a href="#Price" class="nav-link">Price</a></li>
-                        <li class="nav-items"><a href="#Contacts" class="nav-link">Contacts</a></li>
+                        <li class="nav-items"><a href="#Skills" class="nav-link" data-i18="skills">Skills</a></li>
+                        <li class="nav-items"><a href="#Portfolio" class="nav-link" data-i18="portfolio">Portfolio</a></li>
+                        <li class="nav-items"><a href="#Video" class="nav-link" data-i18="video">Video</a></li>
+                        <li class="nav-items"><a href="#Price" class="nav-link" data-i18="price">Price</a></li>
+                        <li class="nav-items"><a href="#Contacts" class="nav-link" data-i18="contacts">Contacts</a></li>
                     </ul>
                 </nav>
-                <div class="lang">
-                    <div class="lang-btn item-en">
-                        <input id="lang-en" name="lang" type="radio" value="en" checked><label for="lang-en">en</label>
+                
+                    <div class="lang">
+                        <div class="lang-btn item-en">
+                            <input id="lang-en" name="lang" type="radio" value="en" checked><label id="uniqid1"for="lang-en">en</label>
+                        </div>
+                        <div class="lang-btn"><span> / </span></div>
+                        <div class="lang-btn item-ru">
+                            <input id="lang-ru" name="lang" type="radio" value="ru"><label id="uniqid2" for="lang-ru">ru</label>
+        <!--                     <span class="lang-gold">en&#8194</span>
+                            <span>/&#8194ru</span> -->
+                        </div>
                     </div>
-                    <div class="lang-btn"><span> / </span></div>
-                    <div class="lang-btn item-ru">
-                        <input id="lang-ru" name="lang" type="radio" value="ru"><label for="lang-ru">ru</label>
-    <!--                     <span class="lang-gold">en&#8194</span>
-                        <span>/&#8194ru</span> -->
-                    </div>
-                </div>
+
+                
                 <button id="switchMode">
                     <img src="./assets/svg/lune.svg" alt="light">
                 </button>
@@ -55,11 +58,11 @@
         <div class="burger-menu" id="close-burger-icon-btn">
             <div class="close"></div>
             <ul>
-                <li><a href="#Skills" class="burger-menu-nav-link">Skills</a></li>
-                <li><a href="#Portfolio" class="burger-menu-nav-link">Portfolio</a></li>
-                <li><a href="#Video" class="burger-menu-nav-link">Video</a></li>
-                <li><a href="#Price" class="burger-menu-nav-link">Price</a></li>
-                <li><a href="#Contacts" class="burger-menu-nav-link">Contacts</a></li>
+                <li><a href="#Skills" class="burger-menu-nav-link" data-i18="">Skills</a></li>
+                <li><a href="#Portfolio" class="burger-menu-nav-link" data-i18="">Portfolio</a></li>
+                <li><a href="#Video" class="burger-menu-nav-link" data-i18="">Video</a></li>
+                <li><a href="#Price" class="burger-menu-nav-link" data-i18="">Price</a></li>
+                <li><a href="#Contacts" class="burger-menu-nav-link" data-i18="">Contacts</a></li>
             </ul>
         </div>
     </header>
@@ -67,17 +70,17 @@
         <div class="container">
             <section class="section">
                 <div class="wraper-hero">
-                    <h1>alexa rise</h1>
-                    <div class="wraper-hero-text">
+                    <h1 data-i18="hero-title">alexa rise</h1>
+                    <div class="wraper-hero-text" data-i18="hero-text">
                         Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise
                     </div>
-                    <button class="button">Hire me</button>
+                    <button class="button" data-i18="hire">Hire me</button>
                 </div>
             </section>
             <section class="section">
                 <div class="wraper-section-title">
                     <a id="Skills"></a>
-                    <h2 class="section-title first-h2">Skills</h2>
+                    <h2 class="section-title first-h2" data-i18="">Skills</h2>
                 </div>
                 <div class="skill-item">
                     <div class="item camera">
