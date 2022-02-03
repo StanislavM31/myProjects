@@ -232,69 +232,54 @@ const i18Obj = {
 let radio = document.getElementsByName('lang');
 console.log("rus = ", radio);
 let m = document.querySelectorAll('input[type=radio]');
-let u = document.getElementById('uniqid1');
-let y = document.getElementById('uniqid2');
+let y = document.getElementById('uniqid1');
+let u = document.getElementById('uniqid2');
+
+let inputs = document.querySelectorAll('input[type=radio]');
 
 y.onclick = function(event) { getData(); };
 u.onclick = function(event) { getData(); };
-
-
+let init = "en";
+console.log(init);
 /* radio.forEach(e=>console.log(e.value)); */
 /* u.addEventListener("click", x);
 y.addEventListener("click", x); */
 
 
 function getData() {
-  let init;
-  var inputs = document.querySelectorAll('input[type=radio]');
+  
+  
   inputs.forEach( function (radio){
     if (radio.checked){
       console.log(radio.value + " is checked");
       init = radio.value;
-      console.log(radio.value);//получил ru
+      console.log("init= ", init);
+      console.log("radio.checked= ", radio.checked);//
+      console.log("radio.value= ", radio.value);//получил ru
     }
       else
       console.log(radio.value + " is not checked");
 
     });
     
-/*     radio.forEach(function(item){
-      if (item.checked == 'true'){
-        console.log('priv');
-        
-      }
-      console.log(init);
-    }); */
 
-    /* return init; */
+      console.log(init);
+
     getTranslate(init);
   }
   
-/* let language = document.getElementsByTagName("input"); */
-/* let language = document.getElementById("unique-id-for-ru"); */
-/* console.log("language = ", language); */
-/* let temp = language.id; */
-/* rus.addEventListener("click", getTranslate(rus)); */
 
-/* language.addEventListener("click", getTranslate(temp)); */
 
 
 const foo = (event) =>{
   console.log(event);
   /* console.log(s); */
   console.log(this.value);
-  /* let s123 = event.target.label.innerText; */
-  
-  console.log("Поздравляю. Вы скоро отьедете кукухой");
 }
 
-/* radio.addEventListener("click", foo); */
-
-/* radio.addEventListener("click", foo()); */
 
 function getTranslate(temp){
 
-  console.log("клик 1", temp);
   let listOfdata = document.querySelectorAll('[data-i18]');
   listOfdata.forEach(elem=> elem.textContent = i18Obj[`${temp}`][elem.dataset.i18]);
 }

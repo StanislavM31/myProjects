@@ -101,13 +101,15 @@ nav ul li a:hover{
 }
 .lang-btn {
 	display: inline-block;
-	cursor: pointer;
 	align-items: center;
   font-family: 'Inter';
   font-weight: 700;
   font-style: normal;
   font-size: 20px;
   line-height: 50px;
+}
+label:hover{
+  cursor: pointer;
 }
 .lang-btn input[type=radio]:checked + label {
 	color:var(--main-color);
