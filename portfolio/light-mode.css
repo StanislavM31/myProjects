@@ -9,7 +9,9 @@
 .wraper-hero button{
     box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
 }
-
+body{
+    background-color: #fff;
+}
 h1, .wraper-section-title h2, .title-contact>h2, .wraper-hero-text, .item div,p, div span, .price-item-wraper p, .footer-item div,a{
     color: var(--color-black);
 }

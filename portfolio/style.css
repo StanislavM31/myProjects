@@ -22,6 +22,7 @@ body{
   margin: 0;
   /* width: 1440px; */
   overflow-x: hidden;
+  background-color: #000;
 }
 .logo {
   margin: auto 0;
