@@ -313,7 +313,7 @@ function getData() {
     if (radio.checked){
       console.log(radio.value + " is checked");
       init = radio.value;
-      
+    
       console.log("radio.checked=", radio.checked);//
       console.log("radio.value= ",radio.value);//получил ru
     }
@@ -321,26 +321,29 @@ function getData() {
       console.log(radio.value + " is not checked");
 
     });
-    
-
-      console.log(init);
+    console.log(init);
 
     getTranslate(init);
   }
   
-
-
-
 const foo = (event) =>{
   console.log(event);
   /* console.log(s); */
   console.log(this.value);
 }
 
-
 function getTranslate(temp){
-
   console.log("клик 1", temp);
   let listOfdata = document.querySelectorAll('[data-i18]');
   listOfdata.forEach(elem=> elem.textContent = i18Obj[`${temp}`][elem.dataset.i18]);
 }
+/* video */
+
+const player = document.querySelector(".video-player");
+const video = document.querySelector('.viewer');
+const progress = document.querySelector('.progres');
+const progresBar = player.querySelector('.progress-field');
+const toggle = player.querySelector('.toggle');
+const skipButtons = player.querySelectorAll('[data-skip]');
+const ranges = player.querySelectorAll('.player-slider');
+ 
