@@ -339,27 +339,83 @@ function getTranslate(temp){
 }
 /* video */
 
-const player = document.querySelector(".video-player");
-const video = document.querySelector('.viewer');
-const progress = document.querySelector('.progres');
-const progresBar = player.querySelector('.progress__field');
 
-const toggle = player.querySelector('.toggle');
-const skipButtons = player.querySelectorAll('[data-skip]');
-const ranges = player.querySelectorAll('.player__slider');
- 
-function togglePlay(){
-  const method = video.paused ? 'play':'pause';
-  video[method]();
-/*   if(video.paused){
-    video.play();
+
+const vidWrapper = document.querySelector('div.video-player');
+const myVid = vidWrapper.querySelector('video.player__video');
+const goldBtnplay = document.getElementById('golden-btn');
+console.log(goldBtnplay);
+// controls
+const controlPlay = vidWrapper.querySelector('.player__button');
+const controlVol = vidWrapper.querySelector('.player__slider[name="volume"]');
+
+const controlSkip = vidWrapper.querySelectorAll('.player__button[data-skip]');
+const controlFullScreen = vidWrapper.querySelector('.player__fullscreen');
+const controlProgress = vidWrapper.querySelector('.progress');
+const progressBar = vidWrapper.querySelector('.progress__filled');
+
+// events
+var drag;
+var grap;
+
+myVid.addEventListener('click', toggleVideo);
+
+controlPlay.addEventListener('click', toggleVideo);
+controlVol.addEventListener('change', updateVol);
+goldBtnplay.addEventListener('click', toggleVideo);
+
+controlFullScreen.addEventListener('click', goFullScreen);
+controlSkip.forEach(control => control.addEventListener('click', forward));
+controlProgress.addEventListener('mouseover', function(){drag = true});
+controlProgress.addEventListener('mouseout', function(){drag = false; grap = false});
+controlProgress.addEventListener('mousedown', function(){grap = drag});
+controlProgress.addEventListener('mouseup', function(){grap = false});
+controlProgress.addEventListener('click', updateCurrentPos);
+controlProgress.addEventListener('mousemove', function(e){ if(drag && grap){updateCurrentPos(e)}});
+
+var progression;
+controlPlay.innerHTML = "►";
+// functions
+function toggleVideo() {
+  if (myVid.paused) {
+    myVid.play();
+    controlPlay.innerHTML = "❚ ❚";
+    controlPlay.
+    goldBtnplay.style.display = "none";
+    updateProgress();
+    progression = window.setInterval(updateProgress, 200);
   } else {
-    video.pause();
-  } */
+    myVid.pause();
+    controlPlay.innerHTML = "►";
+    clearInterval(progression);
+    goldBtnplay.style.display = "block";
+  };
 }
-video.addEventListener('click', togglePlay);
-toggle.addEventListener('click', togglePlay);
+function updateVol(){
+  var volume = this.value;
+  myVid.volume = volume;
+}
+function updateRate(){
+  var rate = this.value;
+  myVid.playbackRate = rate;
+}
+function goFullScreen(){
+  console.dir(myVid);
+  if(myVid.webkitSupportsFullscreen) myVid.webkitEnterFullScreen();
+}
+function forward(){
+  var value = Number(this.dataset.skip);
+  myVid.currentTime = myVid.currentTime + value;
+}
+function updateProgress() {
+  var progress = myVid.currentTime / myVid.duration;
+  progressBar.style.flexBasis = Math.floor(progress * 1000) / 10 + '%';
+}
+function updateCurrentPos(e){
+  // offset of the progress bar / video wrapper width
+  var newProgress = (e.clientX - vidWrapper.offsetLeft) / vidWrapper.clientWidth;
+  progressBar.style.flexBasis = Math.floor(newProgress * 1000) / 10 + '%';
+  myVid.currentTime = newProgress * myVid.duration;
+}
 
-function updateButton(){
-  console.log('tutu');
-}
+/* .мой video-player его player */
