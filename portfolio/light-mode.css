@@ -29,7 +29,7 @@ button .btn-season-item{
 button:hover:not(.video-player-button){
     cursor: pointer;
     color: var(--main-color);
-    background-color: var(--color-black);
+    /* background-color: var(--color-black); */
   }
 .logo, .footer-item.socials ul li a {
     filter: invert(80%);

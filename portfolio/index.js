@@ -342,8 +342,24 @@ function getTranslate(temp){
 const player = document.querySelector(".video-player");
 const video = document.querySelector('.viewer');
 const progress = document.querySelector('.progres');
-const progresBar = player.querySelector('.progress-field');
+const progresBar = player.querySelector('.progress__field');
+
 const toggle = player.querySelector('.toggle');
 const skipButtons = player.querySelectorAll('[data-skip]');
-const ranges = player.querySelectorAll('.player-slider');
+const ranges = player.querySelectorAll('.player__slider');
  
+function togglePlay(){
+  const method = video.paused ? 'play':'pause';
+  video[method]();
+/*   if(video.paused){
+    video.play();
+  } else {
+    video.pause();
+  } */
+}
+video.addEventListener('click', togglePlay);
+toggle.addEventListener('click', togglePlay);
+
+function updateButton(){
+  console.log('tutu');
+}
