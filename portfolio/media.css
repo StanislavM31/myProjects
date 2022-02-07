@@ -109,7 +109,7 @@
   @media (max-width: 768px){
     .video-player{
       width: 100%;
-      height: 418px;
+      /* height: 418px; */
       background-image: url(./assets/video/video-player-small-bg.jpg);
       background-size: auto;
       /* background-size: contain; */

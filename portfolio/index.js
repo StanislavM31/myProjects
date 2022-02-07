@@ -1,17 +1,8 @@
 console.log(
-    ` Сделал только смену изображений по сезонам по клике кнопок +25
-    сделал переключение на темную/светлую тему ( не отображается нажатая кнопка в секции Portfoio/season) +15
-    и я не уверен работает ли кэширование изображений =(
-    
-    можете написать ваши ники в discord, господа проверяющие. возможно успею еще чтонибудь наШкодить до окончания кроссчека,
-    с уважением и пониманием)))
-    ================= правка ======================
-    - кнопки поправил теперь работают и в темной и светлой теме (при переключении темы нажатая кнопка меняет свой цвет)
-    - поправил блок en/ru который сыпался при разрешении примерно 800px
-    - кэширование тоже вроде работает
-    ================= правка ======================
-    добавил переключение языка
-    ИТОГО: ~ 65
+    ` Добавил видео
+    добавил кнопку Play по центру, которая пропадает, прогресс видео и звкука
+    звук не выключается по иконке
+    ИТОГО: ~ на много не претендую
     `);
 
 
@@ -313,7 +304,7 @@ function getData() {
     if (radio.checked){
       console.log(radio.value + " is checked");
       init = radio.value;
-      
+    
       console.log("radio.checked=", radio.checked);//
       console.log("radio.value= ",radio.value);//получил ru
     }
@@ -321,26 +312,101 @@ function getData() {
       console.log(radio.value + " is not checked");
 
     });
-    
-
-      console.log(init);
+    console.log(init);
 
     getTranslate(init);
   }
   
-
-
-
 const foo = (event) =>{
   console.log(event);
   /* console.log(s); */
   console.log(this.value);
 }
 
-
 function getTranslate(temp){
-
   console.log("клик 1", temp);
   let listOfdata = document.querySelectorAll('[data-i18]');
   listOfdata.forEach(elem=> elem.textContent = i18Obj[`${temp}`][elem.dataset.i18]);
 }
+/* video */
+
+
+
+const vidWrapper = document.querySelector('div.video-player');
+const myVid = vidWrapper.querySelector('video.player__video');
+const goldBtnplay = document.getElementById('golden-btn');
+console.log(goldBtnplay);
+// controls
+const controlPlay = vidWrapper.querySelector('.player__button');
+const controlVol = vidWrapper.querySelector('.player__slider[name="volume"]');
+
+const controlSkip = vidWrapper.querySelectorAll('.player__button[data-skip]');
+const controlFullScreen = vidWrapper.querySelector('.player__fullscreen');
+const controlProgress = vidWrapper.querySelector('.progress');
+const progressBar = vidWrapper.querySelector('.progress__filled');
+
+// events
+var drag;
+var grap;
+
+myVid.addEventListener('click', toggleVideo);
+
+controlPlay.addEventListener('click', toggleVideo);
+controlVol.addEventListener('change', updateVol);
+goldBtnplay.addEventListener('click', toggleVideo);
+
+controlFullScreen.addEventListener('click', goFullScreen);
+controlSkip.forEach(control => control.addEventListener('click', forward));
+controlProgress.addEventListener('mouseover', function(){drag = true});
+controlProgress.addEventListener('mouseout', function(){drag = false; grap = false});
+controlProgress.addEventListener('mousedown', function(){grap = drag});
+controlProgress.addEventListener('mouseup', function(){grap = false});
+controlProgress.addEventListener('click', updateCurrentPos);
+controlProgress.addEventListener('mousemove', function(e){ if(drag && grap){updateCurrentPos(e)}});
+
+var progression;
+controlPlay.innerHTML = "►";
+// functions
+function toggleVideo() {
+  if (myVid.paused) {
+    myVid.play();
+    controlPlay.innerHTML = "❚ ❚";
+    controlPlay.
+    goldBtnplay.style.display = "none";
+    updateProgress();
+    progression = window.setInterval(updateProgress, 200);
+  } else {
+    myVid.pause();
+    controlPlay.innerHTML = "►";
+    clearInterval(progression);
+    goldBtnplay.style.display = "block";
+  };
+}
+function updateVol(){
+  var volume = this.value;
+  myVid.volume = volume;
+}
+function updateRate(){
+  var rate = this.value;
+  myVid.playbackRate = rate;
+}
+function goFullScreen(){
+  console.dir(myVid);
+  if(myVid.webkitSupportsFullscreen) myVid.webkitEnterFullScreen();
+}
+function forward(){
+  var value = Number(this.dataset.skip);
+  myVid.currentTime = myVid.currentTime + value;
+}
+function updateProgress() {
+  var progress = myVid.currentTime / myVid.duration;
+  progressBar.style.flexBasis = Math.floor(progress * 1000) / 10 + '%';
+}
+function updateCurrentPos(e){
+  // offset of the progress bar / video wrapper width
+  var newProgress = (e.clientX - vidWrapper.offsetLeft) / vidWrapper.clientWidth;
+  progressBar.style.flexBasis = Math.floor(newProgress * 1000) / 10 + '%';
+  myVid.currentTime = newProgress * myVid.duration;
+}
+
+/* .мой video-player его player */
