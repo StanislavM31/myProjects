@@ -333,8 +333,8 @@ function getTranslate(temp){
 
 
 const vidWrapper = document.querySelector('div.video-player');
-const myVid = vidWrapper.querySelector('video.player__video');
-const goldBtnplay = document.getElementById('golden-btn');
+const myVid = vidWrapper.querySelector('video.player__video.viewer');
+const goldBtnplay = document.getElementById("golden-btn");
 console.log(goldBtnplay);
 // controls
 const controlPlay = vidWrapper.querySelector('.player__button');
@@ -371,15 +371,16 @@ function toggleVideo() {
   if (myVid.paused) {
     myVid.play();
     controlPlay.innerHTML = "❚ ❚";
-    controlPlay.
-    goldBtnplay.style.display = "none";
+    goldBtnplay.style.visibility='hidden';
+    console.log('нет');
     updateProgress();
     progression = window.setInterval(updateProgress, 200);
   } else {
     myVid.pause();
     controlPlay.innerHTML = "►";
+    console.log('есть');
     clearInterval(progression);
-    goldBtnplay.style.display = "block";
+    goldBtnplay.style.visibility='visible';
   };
 }
 function updateVol(){
