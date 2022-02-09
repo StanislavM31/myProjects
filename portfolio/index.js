@@ -344,7 +344,10 @@ const controlSkip = vidWrapper.querySelectorAll('.player__button[data-skip]');
 const controlFullScreen = vidWrapper.querySelector('.player__fullscreen');
 const controlProgress = vidWrapper.querySelector('.progress');
 const progressBar = vidWrapper.querySelector('.progress__filled');
-
+console.log('vidWrapper', vidWrapper);
+console.log('controlPlay', controlPlay);
+const playPause= document.querySelector(".player__button.toggle>img");
+console.log('playPause', playPause);
 // events
 var drag;
 var grap;
@@ -365,19 +368,24 @@ controlProgress.addEventListener('click', updateCurrentPos);
 controlProgress.addEventListener('mousemove', function(e){ if(drag && grap){updateCurrentPos(e)}});
 
 var progression;
-controlPlay.innerHTML = "►";
+/* controlPlay.innerHTML = "►"; */
+controlPlay.querySelector('img');
+console.log('controlPlay', controlPlay);
 // functions
 function toggleVideo() {
   if (myVid.paused) {
     myVid.play();
-    controlPlay.innerHTML = "❚ ❚";
-    goldBtnplay.style.visibility='hidden';
+    /* controlPlay.innerHTML = "❚ ❚"; */
+  /*   <img src="./assets/svg/volume.svg" alt="volume"> */
+    /* playPause.style.visibility='hidden'; */
+    playPause.src = "./assets/svg/pause.svg";
+    /* goldBtnplay.style.visibility='hidden'; */
     console.log('нет');
     updateProgress();
     progression = window.setInterval(updateProgress, 200);
   } else {
     myVid.pause();
-    controlPlay.innerHTML = "►";
+    playPause.src = "./assets/svg/play.svg";
     console.log('есть');
     clearInterval(progression);
     goldBtnplay.style.visibility='visible';

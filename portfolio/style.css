@@ -341,7 +341,7 @@ button:hover{
   color: #FFFFFF;
   background-color: var(--main-color);
 }
-#golden-btn:hover{
+#golden-btn, .player__button:hover{
   background-color: transparent;
 }
 html {
@@ -383,6 +383,7 @@ html {
 video{
   object-fit: cover;
   /* height: 590px; */
+  margin: auto auto;
 }
 
 /* .video-player button {
@@ -409,7 +410,10 @@ video{
 }
 
 .player__button {
-  background:none;
+  margin-top: 2px;
+  
+  width: 36px;
+  height: 36px;
   border:0;
   line-height:1;
   color:white;
@@ -418,6 +422,8 @@ video{
   padding: 0;
   cursor:pointer;
   max-width:50px;
+  background:none;
+  
 }
 
 .player__button:focus {
@@ -433,19 +439,29 @@ video{
   display:flex;
   position: absolute;
   bottom:0;
+  margin: 2px 0 2px 0;
   width: 100%;
   transform: translateY(100%) translateY(-5px);
   transition:all .3s;
   flex-wrap:wrap;
   background:rgba(0,0,0,0.1);
 }
+.player__button img:hover{
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+  contrast(87%);
+} 
 .player__controls.volume-wraper{
   /* width: auto; */
-  width: 50px;
+  /* width: 50px; */
+
 }
 .player__controls .player__slider{
   width: 100px;
   flex:12;
+}
+.volume-wraper img:hover{
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+  contrast(87%);
 }
 
 .video-player:hover .player__controls {
@@ -473,7 +489,7 @@ video{
 
 .progress__filled {
   width:50%;
-  background:#ffc600;
+  background:var(--main-color);
   flex:0;
   flex-basis:50%;
 }
@@ -483,14 +499,14 @@ video{
 input[type=range] {
   -webkit-appearance: none;
   background:transparent;
-  width: 100%;
+  width: 50%;
   margin: 0 5px;
 }
 input[type=range]:focus {
   outline: none;
 }
 input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
+  width: 50%;
   height: 8.4px;
   cursor: pointer;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
