@@ -375,14 +375,12 @@ console.log('controlPlay', controlPlay);
 function toggleVideo() {
   if (myVid.paused) {
     myVid.play();
-    /* controlPlay.innerHTML = "❚ ❚"; */
-  /*   <img src="./assets/svg/volume.svg" alt="volume"> */
-    /* playPause.style.visibility='hidden'; */
+    goldBtnplay.style.visibility='hidden';
+
     playPause.src = "./assets/svg/pause.svg";
-    /* goldBtnplay.style.visibility='hidden'; */
     console.log('нет');
     updateProgress();
-    progression = window.setInterval(updateProgress, 200);
+    progression = window.setInterval(updateProgress, 100);
   } else {
     myVid.pause();
     playPause.src = "./assets/svg/play.svg";
