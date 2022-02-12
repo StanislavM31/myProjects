@@ -417,3 +417,5 @@ function updateCurrentPos(e){
 }
 
 /* .мой video-player его player */
+
+/* off the sound */
