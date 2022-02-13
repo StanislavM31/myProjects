@@ -4,7 +4,7 @@ console.log("hello2");
 /* const API_KEY = "8c8e1a50-6322-4135-8875-5d40a5420d86"; */
 const API_KEY = "287c752e-5820-4968-b165-e861c0a28d4b";
 const API_URL_POPULAR = "https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS&page=1";
-
+const API_URL_SEARCH = "https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=";
 getMovies(API_URL_POPULAR);
 
 async function getMovies(url){
@@ -28,6 +28,9 @@ function getColorRating(rate){
 }
 function showMovies(data){
     const moviesEl = document.querySelector(".movies");
+
+    /* почистим предыдущие результаты*/
+    document.querySelector(".movies").innerHTML="";
 
     data.films.forEach((movie) => {
     const movieEl = document.createElement("div");
@@ -53,3 +56,18 @@ function showMovies(data){
             /* .appendChild() добавляет узел в конец списка дочерних элементов указанного родительского узла.  */
     });
 }
+
+const form = document.querySelector("form");
+const search = document.querySelector(".header__search");
+
+/* слушатель */
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const apiSearchUrl = `${API_URL_SEARCH}${search.value}`;
+    if(search.value){
+        getMovies(apiSearchUrl);
+        /* очищаем строку поиска */
+        search.value = "";
+    }
+})
