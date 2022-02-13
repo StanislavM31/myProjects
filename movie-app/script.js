@@ -19,7 +19,13 @@ async function getMovies(url){
     console.log(respData);
     showMovies(respData);
 }
-
+function getColorRating(rate){
+    if (rate >= 7) {
+        return "green";
+    } else if (rate > 5) {
+        return "yellow";
+    } else return "red";
+}
 function showMovies(data){
     const moviesEl = document.querySelector(".movies");
 
@@ -27,6 +33,10 @@ function showMovies(data){
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
         /* Свойство интерфейса Element innerHTML устанавливает или получает HTML или XML разметку дочерних элементов. */
+        let r = movie.rating[0]+movie.rating[1]+movie.rating[2];
+        if(movie.rating[1]!=="."){
+            r = movie.rating[0]+'.0'; //небольшой костыль для некорректных данных
+        }
         movieEl.innerHTML=`
             <div class="movie__cover-in">
             <img src="${movie.posterUrlPreview}" class="movie__cover" alt="${movie.nameRu}">
@@ -36,8 +46,9 @@ function showMovies(data){
                     <div class="movie__title">${movie.nameRu}</div>
                     <div class="movie__category">${movie.genres.map((genre)=>`${genre.genre}`)}</div>
                 </div>
-                <div class="movie__average movie__average--green">${movie.rating}</div>
+                <div class="movie__average movie__average--${getColorRating(r)}">${r}</div>
             </div>`;
+            console.log(movie.nameRu, movie.rating.length);
             moviesEl.appendChild(movieEl);
             /* .appendChild() добавляет узел в конец списка дочерних элементов указанного родительского узла.  */
     });
