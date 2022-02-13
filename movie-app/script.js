@@ -40,6 +40,7 @@ function showMovies(data){
         if(movie.rating[1]!=="."){
             r = movie.rating[0]+'.0'; //небольшой костыль для некорректных данных
         }
+        
         movieEl.innerHTML=`
             <div class="movie__cover-in">
             <img src="${movie.posterUrlPreview}" class="movie__cover" alt="${movie.nameRu}">
@@ -68,6 +69,6 @@ form.addEventListener("submit", (e) => {
     if(search.value){
         getMovies(apiSearchUrl);
         /* очищаем строку поиска */
-        search.value = "";
+        /* search.value = ""; */
     }
 })
