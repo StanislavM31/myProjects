@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #214c58;
-    --secondary-color: #448c9e;
+    --primary-color: #142b31;
+    --secondary-color: #21424bc9;
 }
 
 *{
@@ -22,7 +22,7 @@ body{
     display: flex;;
     align-items: center;
     justify-content: space-between;
-    
+    background-color: var(--secondary-color);
     height: 70px;
 }
 a{
@@ -35,7 +35,7 @@ a{
 .header__search{
     padding: 10px;
     border: 2px solid grey;
-    border-radius: 5px;
+    border-radius: 20px;
     /* outline: none; */
 }
 .movies{
@@ -122,6 +122,9 @@ a{
 }
 
 /* footer */
+footer{
+    background-color: var(--secondary-color);
+}
 footer .container{
     height: 70px;
     display: flex;
@@ -158,3 +161,41 @@ footer .container{
  a:hover{
     color: #ffd80e;;
   }
+
+
+  .closeModal {
+	position: absolute;
+	top: 25px;
+	right: 35px;
+	width: 20px;
+	height: 20px;
+	opacity: 0.2;
+	cursor: pointer;
+  transition: opacity ease 0.5s;
+
+
+}
+.closeModal:hover{
+   
+		opacity: 1;
+
+}
+
+.closeModal::before,
+.closeModal::after {
+	content: '';
+	position: absolute;
+	top: 10px;
+	display: block;
+	width: 24px;
+	height: 3px;
+	background: rgb(226, 16, 16);
+}
+
+.closeModal::before {
+	transform: rotate(45deg);
+}
+
+.closeModal::after {
+	transform: rotate(-45deg);
+}
