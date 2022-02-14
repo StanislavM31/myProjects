@@ -1,3 +1,8 @@
+:root {
+    --primary-color: #214c58;
+    --secondary-color: #448c9e;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -5,7 +10,7 @@
 }
 
 body{
-    background-color: #222030;
+    background-color: var(--primary-color);
 }
 .container{
     max-width: 1200px;
@@ -87,7 +92,7 @@ a{
     font-size: .8em;
     color: #ffd80e;
     width: 470px;
-    height: 100px;
+    height: 50px;
     padding: 0 2px 0 2px;
 }
 .movie__average{
@@ -115,3 +120,41 @@ a{
 .movie__average--red{
     border: 1px solid rgba(255, 0, 0, 0.705);
 }
+
+/* footer */
+footer .container{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    /* background-color:var(--color-black); */
+  }
+  .git, .rsschool{
+    font-family: 'Inter';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0em;
+  }
+  .git{
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+  }
+  .git>div{
+    padding-right: 20px;
+    
+  }
+  .rsschool a{
+    display: block;
+  }
+
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+ a:hover{
+    color: #ffd80e;;
+  }
