@@ -18,12 +18,14 @@ body{
     /* border: 1px solid red; */
     padding: 0 20px 0 20px;
 }
+header{
+    background-color: var(--secondary-color);
+}
 .header__content{
     display: flex;
     position: relative;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--secondary-color);
     height: 70px;
 }
 a{
@@ -146,11 +148,22 @@ footer .container{
     display: flex;
     flex-direction: row;
     color: #fff;
-  }
-  .git>div{
-    padding-right: 20px;
     
   }
+  .git>*{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  .git img:hover{
+      opacity: .5;
+      background-color: #ffd80e;
+      border-radius: 15px;
+  }
+  .link-footer-img{
+    width: 121px;
+    height: 45px;
+}
   .rsschool a{
     display: block;
   }
