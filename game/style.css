@@ -5,8 +5,8 @@
 }
 /* init styles */
 :root {
-    --primary-color: #142b31;
-    --secondary-color: #21424bc9;
+    --primary-color: #21424bc9;
+    --secondary-color: #2c788dc9;
 }
 
 *{
@@ -91,4 +91,13 @@ footer .container{
   }
  a:hover{
     color: #ffd80e;;
+  }
+
+  /* body */
+canvas{
+    /* background-color: black; */
+}
+  #myCanvas{
+      width: 800px;
+      height: 600px;
   }
