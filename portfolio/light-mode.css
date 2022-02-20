@@ -1,0 +1,115 @@
+:root{
+    --color-black: #000;
+    --main-color: #bdae82;
+  }
+
+.header, .main, footer, .wraper-section-title h2, .wraper-hero button, .title-contact button{
+    background-color: #fff;
+}
+.wraper-hero button{
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+}
+body{
+    background-color: #fff;
+}
+h1, .wraper-section-title h2, .title-contact>h2, .wraper-hero-text, .item div,p, div span, .price-item-wraper p, .footer-item div,a{
+    color: var(--color-black);
+}
+.wraper-section-title:not(:last-child):before{
+
+    background-color: var(--color-black);
+  }
+button .btn-season-item{
+    background-color: var(--main-color);
+}
+.btn-season-item{
+    color: #fff;
+    background-color: var(--main-color);
+}
+button:hover:not(.video-player button ){
+    cursor: pointer;
+    color: var(--main-color);
+    background-color: var(--color-black);
+  }
+.logo, .footer-item.socials ul li a {
+    filter: invert(80%);
+    transition: 0.3s;
+  }
+  .footer-item.socials ul li a:hover{
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+  }
+.lang label{
+    color: var(--color-black);
+}
+.lang label:hover{
+    color: #fff;
+}
+.lang-btn input[type=radio]:checked + label {
+    color: #fff;
+}
+
+.header{
+    background: url(./assets/img/bg-light-theme.jpg);
+    
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-color: #fff;
+    position: relative;
+}
+a.nav-link{
+    color: var(--color-black);
+}
+a.nav-link:hover{
+    color: #fff;
+}
+.main{
+    background: url(./assets/img/bg-light-theme.jpg);
+    
+    background-repeat: no-repeat;
+    background-position: center -90px;
+    background-color: #fff;
+}
+.section-contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-image: url(./assets/img/contacts-light-theme.jpg);
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+.input-item, .input-item-txt{
+    background-color: #fff;
+    opacity: 0.6;
+}
+::placeholder {
+    color: var(--color-black);
+  }
+
+@media (max-width: 768px){
+  .header .burger-menu{
+    position: fixed;
+  }
+}
+.burger-menu {
+    color: var(--color-black);
+    background-color: #fff;
+}
+.close{
+    background-image: url(./assets/svg/close-for-light-mode.svg);
+    background-repeat: no-repeat;
+}
+@media (max-width: 768px){
+
+    #contact-light-theme {
+        background-image: url(./assets/img/contacts-small-light-theme.jpg);
+    }
+    
+    #footer-light-theme {
+        background-color: #fff;
+    }
+}
+
+.active-light{
+    background-color: var(--color-black);  
+  }
