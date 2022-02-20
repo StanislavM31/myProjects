@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* init styles */
+:root {
+    --primary-color: #21424bc9;
+    --secondary-color: #2c788dc9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+body{
+    background-color: var(--primary-color);
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+    padding: 0 20px 0 20px;
+}
+header{
+    background-color: var(--secondary-color);
+}
+.header__content{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+a{
+    text-decoration: none;
+}
+.header__logo{
+    font-size: 2.5em;
+    color: #fff;
+}
+/* footer */
+footer{
+    background-color: var(--secondary-color);
+}
+footer .container{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    /* background-color:var(--color-black); */
+  }
+  .git, .rsschool{
+    font-family: 'Inter';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0em;
+  }
+  .git{
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    
+  }
+  .git>*{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  .git img:hover{
+      opacity: .5;
+      background-color: #ffd80e;
+      border-radius: 15px;
+  }
+  .link-footer-img{
+    width: 121px;
+    height: 45px;
+}
+  .rsschool a{
+    display: block;
+  }
+
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+ a:hover{
+    color: #ffd80e;;
+  }
+
+  /* body */
+canvas{
+    background-color: #fff;
+}
+  #myCanvas{
+      width: 100%;
+      height: 100%;
+  }
