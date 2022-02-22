@@ -118,7 +118,7 @@ function draw() {
             }
         }
         else {
-            alert("Игра Окончена");
+            alert(`Игра Окончена. Счет: ${score}`);
             document.location.reload();
             
         }
@@ -135,4 +135,4 @@ function draw() {
     y += dy;
 }
 
-var interval = setInterval(draw, 20);
+var interval = setInterval(draw, 30);
