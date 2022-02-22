@@ -118,7 +118,7 @@ function draw() {
             }
         }
         else {
-            alert("Игра Окончена");
+            alert(`Игра Окончена. Счет: ${score}`);
             document.location.reload();
             
         }
