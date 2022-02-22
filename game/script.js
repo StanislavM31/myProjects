@@ -135,4 +135,4 @@ function draw() {
     y += dy;
 }
 
-var interval = setInterval(draw, 20);
+var interval = setInterval(draw, 30);
