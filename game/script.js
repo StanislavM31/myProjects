@@ -1,97 +1,138 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var ballRadius = 10;
+var ballRadius = 5;
 var x = canvas.width/2;
 var y = canvas.height-30;
 var dx = 2;
 var dy = -2;
-var paddleHeight = 10;
+var paddleHeight = 8;
 var paddleWidth = 75;
 var paddleX = (canvas.width-paddleWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
+var brickRowCount = 3;
+var brickColumnCount = 5;
+var brickWidth = 45;
+var brickHeight = 15;
+var brickPadding = 3;
+var brickOffsetTop = 5;
+var brickOffsetLeft = 30;
+var score = 0;
+
+
+var bricks = [];
+for (var c = 0; c < brickColumnCount; c++) {
+    bricks[c] = [];
+    for (var r = 0; r < brickRowCount; r++) {
+        bricks[c][r] = { x: 0, y: 0, status: 1 };
+    }
+}
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e) {
-    if(e.keyCode == 39) {
+    if (e.key == "Right" || e.key == "ArrowRight") {
         rightPressed = true;
     }
-    else if(e.keyCode == 37) {
+    else if (e.key == "Left" || e.key == "ArrowLeft") {
         leftPressed = true;
     }
 }
+
 function keyUpHandler(e) {
-    if(e.keyCode == 39) {
+    if (e.key == "Right" || e.key == "ArrowRight") {
         rightPressed = false;
     }
-    else if(e.keyCode == 37) {
+    else if (e.key == "Left" || e.key == "ArrowLeft") {
         leftPressed = false;
     }
 }
-
+function collisionDetection() {
+    for(var c=0; c<brickColumnCount; c++) {
+        for(var r=0; r<brickRowCount; r++) {
+            var b = bricks[c][r];
+            if(b.status == 1) {
+                if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+                    dy = -dy;
+                    b.status = 0;
+                    score++;
+                    if(score == brickRowCount*brickColumnCount) {
+                        alert(`Победа!! Ваш счёт: ${ score}`);
+                        document.location.reload();
+                    }
+                }
+            }
+        }
+    }
+}
 function drawBall() {
     ctx.beginPath();
-    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-    ctx.fillStyle = "#0095DD";
+    ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+    ctx.fillStyle = "#FF0000";
     ctx.fill();
     ctx.closePath();
 }
 function drawPaddle() {
     ctx.beginPath();
-    ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+    ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
     ctx.fillStyle = "#0095DD";
     ctx.fill();
     ctx.closePath();
 }
+function drawBricks() {
+    for (var c = 0; c < brickColumnCount; c++) {
+        for (var r = 0; r < brickRowCount; r++) {
+            if (bricks[c][r].status == 1) {
+                var brickX = (c * (brickWidth + brickPadding)) + brickOffsetLeft;
+                var brickY = (r * (brickHeight + brickPadding)) + brickOffsetTop;
+                bricks[c][r].x = brickX;
+                bricks[c][r].y = brickY;
+                ctx.beginPath();
+                ctx.rect(brickX, brickY, brickWidth, brickHeight);
+                ctx.fillStyle = "#0095DD";
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+    }
+}
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBricks();
     drawBall();
     drawPaddle();
-    
-    if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+    collisionDetection();
+
+    if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
         dx = -dx;
     }
-    if(y + dy < ballRadius) {
+    if (y + dy < ballRadius) {
         dy = -dy;
     }
-    else if(y + dy > canvas.height-ballRadius) {
-        if(x > paddleX && x < paddleX + paddleWidth) {
-            dy = -dy;
+    else if (y + dy > canvas.height - ballRadius) {
+        if (x > paddleX && x < paddleX + paddleWidth) {
+            if (y = y - paddleHeight) {
+                dy = -dy;
+            }
         }
         else {
-            alert("ИГРА ОКОНЧЕНА =(");
+            alert("Игра Окончена");
             document.location.reload();
-            clearInterval(interval); // Needed for Chrome to end game
+            
         }
     }
-    
-    if(rightPressed && paddleX < canvas.width-paddleWidth) {
+
+    if (rightPressed && paddleX < canvas.width - paddleWidth) {
         paddleX += 7;
     }
-    else if(leftPressed && paddleX > 0) {
+    else if (leftPressed && paddleX > 0) {
         paddleX -= 7;
     }
-    
+
     x += dx;
     y += dy;
 }
 
-let interval = setInterval(draw, 15);
-
-
-console.log(`
-Вёрстка +10
-частично - реализован интерфейс игры +5
-да - в футере приложения есть ссылка на гитхаб автора приложения, год создания приложения, логотип курса со ссылкой на курс +5
-частично - Логика игры. Ходы, перемещения фигур, другие действия игрока подчиняются определённым свойственным игре правилам +10
-частично - Реализовано завершение игры при достижении игровой цели +10
-нет - По окончанию игры выводится её результат, например, количество ходов, время игры, набранные баллы, выигрыш или поражение и т.д +10
-нет - Результаты последних 10 игр сохраняются в local storage. Есть таблица рекордов, в которой сохраняются результаты предыдущих 10 игр +10
-нет- Анимации или звуки, или настройки игры. Баллы начисляются за любой из перечисленных пунктов +10
-нет- Очень высокое качество оформления приложения и/или дополнительный не предусмотренный в задании функционал, улучшающий качество приложения +10
-высокое качество оформления приложения предполагает собственное оригинальное оформление равное или отличающееся в лучшую сторону по сравнению с демо
-Господа ПРОВЕРЯЮЩИЕ: пожалуйста, проверьте работу в последний день перед делайном. Сейчас чтото пока только так. К сожалению
-`)
+var interval = setInterval(draw, 20);
